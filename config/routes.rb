@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#welcome'
 
-  get "/sessions/new", to: "sessions#new", as: :new_session
-  delete "/sessions", to: "sessions#destroy", as: :session
+  get "/session/new", to: "session#new", as: :new_session
+  post "/session", to: "session#create", as: :session
+  delete "/session", to: "session#destroy"
 
   get "/users", to: "users#index", as: :users
   post "/users", to: "users#create"
