@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#welcome'
+  root 'users#show'
 
   get "/sessions/new", to: "sessions#new", as: :new_session
+  post "/sessions/new", to: "sessions#create"
   delete "/sessions", to: "sessions#destroy", as: :session
 
   get "/users", to: "users#index", as: :users
